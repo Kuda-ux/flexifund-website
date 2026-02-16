@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { MapPin, Phone, Mail, Globe, Clock, Send } from "lucide-react";
 
@@ -40,7 +41,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">
             Get In Touch
@@ -56,7 +57,7 @@ export default function Contact() {
         </motion.div>
 
         <div className="grid lg:grid-cols-5 gap-10">
-          {/* Contact Info Cards */}
+          {/* Left column: image + contact info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -64,21 +65,39 @@ export default function Contact() {
             transition={{ duration: 0.6 }}
             className="lg:col-span-2 space-y-5"
           >
+            {/* Contact image */}
+            <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
+              <Image
+                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
+                alt="Customer service representative helping a client"
+                fill
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0c2d48]/80 to-transparent" />
+              <div className="absolute bottom-0 left-0 right-0 p-5">
+                <p className="text-white font-bold">We&apos;re Here to Help</p>
+                <p className="text-blue-100/70 text-sm">
+                  Reach out and let&apos;s discuss your financial needs.
+                </p>
+              </div>
+            </div>
+
+            {/* Contact cards */}
             {contactInfo.map((item, index) => (
               <div
                 key={index}
-                className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
+                className="bg-white rounded-xl p-5 shadow-sm border border-gray-100 hover:shadow-md transition-shadow duration-300"
               >
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-accent-light rounded-xl flex items-center justify-center flex-shrink-0">
-                    <item.icon className="text-primary" size={22} />
+                <div className="flex items-start gap-3">
+                  <div className="w-10 h-10 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <item.icon className="text-primary" size={20} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-gray-900 mb-1">
+                    <h3 className="font-bold text-gray-900 text-sm mb-0.5">
                       {item.title}
                     </h3>
                     {item.details.map((detail, i) => (
-                      <p key={i} className="text-gray-600 text-sm">
+                      <p key={i} className="text-gray-500 text-sm">
                         {detail}
                       </p>
                     ))}
@@ -88,12 +107,12 @@ export default function Contact() {
             ))}
 
             {/* Business hours */}
-            <div className="bg-gradient-to-br from-[#1a7ab5] to-[#155d8b] rounded-2xl p-6 text-white">
-              <div className="flex items-center gap-3 mb-3">
-                <Clock size={20} className="text-cyan-200" />
-                <h3 className="font-bold">Business Hours</h3>
+            <div className="bg-[#0c2d48] rounded-xl p-5 text-white">
+              <div className="flex items-center gap-2 mb-2">
+                <Clock size={18} className="text-cyan-300" />
+                <h3 className="font-bold text-sm">Business Hours</h3>
               </div>
-              <div className="space-y-1 text-blue-100 text-sm">
+              <div className="space-y-0.5 text-blue-200/70 text-sm">
                 <p>Monday – Friday: 8:00 AM – 5:00 PM</p>
                 <p>Saturday: 8:00 AM – 1:00 PM</p>
                 <p>Sunday & Public Holidays: Closed</p>
@@ -110,10 +129,10 @@ export default function Contact() {
             className="lg:col-span-3"
           >
             <div className="bg-white rounded-2xl shadow-lg border border-gray-100 p-8 sm:p-10">
-              <h3 className="text-2xl font-bold text-gray-900 mb-2">
+              <h3 className="text-2xl font-bold text-gray-900 mb-1">
                 Send Us a Message
               </h3>
-              <p className="text-gray-500 mb-8 text-sm">
+              <p className="text-gray-400 mb-7 text-sm">
                 Fill out the form below and our team will get back to you within
                 24 hours.
               </p>
@@ -143,7 +162,7 @@ export default function Contact() {
                   window.location.href = mailtoLink;
                 }}
               >
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="name"
@@ -156,7 +175,7 @@ export default function Contact() {
                       id="name"
                       name="name"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
                       placeholder="John Doe"
                     />
                   </div>
@@ -172,13 +191,13 @@ export default function Contact() {
                       id="email"
                       name="email"
                       required
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
                       placeholder="john@example.com"
                     />
                   </div>
                 </div>
 
-                <div className="grid sm:grid-cols-2 gap-5">
+                <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label
                       htmlFor="phone"
@@ -190,7 +209,7 @@ export default function Contact() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm"
                       placeholder="+263 7XX XXX XXX"
                     />
                   </div>
@@ -204,25 +223,15 @@ export default function Contact() {
                     <select
                       id="subject"
                       name="subject"
-                      className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-700"
+                      className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-700"
                     >
                       <option value="General Inquiry">General Inquiry</option>
-                      <option value="Salary-Based Loan">
-                        Salary-Based Loan
-                      </option>
-                      <option value="Collateral-Based Loan">
-                        Collateral-Based Loan
-                      </option>
+                      <option value="Salary-Based Loan">Salary-Based Loan</option>
+                      <option value="Collateral-Based Loan">Collateral-Based Loan</option>
                       <option value="School Fees Loan">School Fees Loan</option>
-                      <option value="Product Financing">
-                        Product Financing
-                      </option>
-                      <option value="SSB Government Loan">
-                        SSB Government Loan
-                      </option>
-                      <option value="Foreign Currency Lending">
-                        Foreign Currency Lending
-                      </option>
+                      <option value="Product Financing">Product Financing</option>
+                      <option value="SSB Government Loan">SSB Government Loan</option>
+                      <option value="Foreign Currency Lending">Foreign Currency Lending</option>
                     </select>
                   </div>
                 </div>
@@ -239,14 +248,14 @@ export default function Contact() {
                     name="message"
                     rows={5}
                     required
-                    className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"
+                    className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm resize-none"
                     placeholder="Tell us how we can help you..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-xl font-semibold text-sm transition-all duration-200 shadow-lg hover:shadow-xl hover:scale-[1.02]"
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg"
                 >
                   <Send size={18} />
                   Send Message

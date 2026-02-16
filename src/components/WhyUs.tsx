@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ShieldCheck,
@@ -9,6 +10,7 @@ import {
   Scale,
   Clock,
   Sparkles,
+  CheckCircle,
 } from "lucide-react";
 
 const values = [
@@ -16,43 +18,36 @@ const values = [
     icon: ShieldCheck,
     title: "Integrity",
     description: "Ethical and transparent operations in everything we do.",
-    gradient: "from-blue-500 to-blue-600",
   },
   {
     icon: Users,
     title: "Accessibility",
     description: "Financial services available for all Zimbabweans.",
-    gradient: "from-emerald-500 to-emerald-600",
   },
   {
     icon: Scale,
     title: "Accountability",
     description: "Responsible lending and strong governance practices.",
-    gradient: "from-amber-500 to-amber-600",
   },
   {
     icon: HeartHandshake,
     title: "Customer-Centricity",
     description: "Clients first, always — your needs drive our solutions.",
-    gradient: "from-rose-500 to-rose-600",
   },
   {
     icon: Lightbulb,
     title: "Innovation",
     description: "Modern, flexible financial solutions for a digital age.",
-    gradient: "from-purple-500 to-purple-600",
   },
   {
     icon: Clock,
     title: "Reliability",
     description: "Consistent and dependable service delivery you can count on.",
-    gradient: "from-cyan-500 to-cyan-600",
   },
   {
     icon: Sparkles,
     title: "Respect",
     description: "Dignity and fairness for every client we serve.",
-    gradient: "from-indigo-500 to-indigo-600",
   },
 ];
 
@@ -76,7 +71,7 @@ export default function WhyUs() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">
             Why Choose FlexiFund
@@ -91,70 +86,104 @@ export default function WhyUs() {
           </p>
         </motion.div>
 
-        {/* Values grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 mb-20">
-          {values.map((value, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.4, delay: index * 0.08 }}
-              className="group relative bg-white rounded-2xl p-6 border border-gray-100 hover:border-primary/20 shadow-sm hover:shadow-xl transition-all duration-300"
-            >
-              <div
-                className={`w-12 h-12 bg-gradient-to-br ${value.gradient} rounded-xl flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <value.icon size={22} className="text-white" />
-              </div>
-              <h3 className="text-lg font-bold text-gray-900 mb-2">
-                {value.title}
-              </h3>
-              <p className="text-gray-600 text-sm leading-relaxed">
-                {value.description}
+        {/* Values — image left, grid right */}
+        <div className="grid lg:grid-cols-5 gap-10 items-stretch mb-20">
+          {/* Image column */}
+          <motion.div
+            initial={{ opacity: 0, x: -20 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.6 }}
+            className="lg:col-span-2 relative rounded-2xl overflow-hidden min-h-[360px] shadow-lg"
+          >
+            <Image
+              src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?q=80&w=987&auto=format&fit=crop"
+              alt="Diverse African team working together"
+              fill
+              className="object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#0c2d48]/70 to-transparent" />
+            <div className="absolute bottom-0 left-0 right-0 p-6">
+              <p className="text-white font-bold text-lg">
+                Values-Driven Lending
               </p>
-            </motion.div>
-          ))}
+              <p className="text-blue-100/70 text-sm">
+                Every decision guided by integrity and client care.
+              </p>
+            </div>
+          </motion.div>
+
+          {/* Values grid */}
+          <div className="lg:col-span-3 grid sm:grid-cols-2 gap-4">
+            {values.map((value, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 16 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.35, delay: index * 0.06 }}
+                className="flex items-start gap-3.5 bg-gray-50 rounded-xl p-5 border border-gray-100 hover:bg-blue-50/50 hover:border-primary/10 transition-colors duration-200"
+              >
+                <div className="w-10 h-10 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <value.icon size={20} className="text-primary" />
+                </div>
+                <div>
+                  <h3 className="text-[15px] font-bold text-gray-900 mb-0.5">
+                    {value.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed">
+                    {value.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
         </div>
 
-        {/* Strategic Focus Areas */}
+        {/* Strategic Focus Areas — image background banner */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-gradient-to-br from-[#0c2d48] via-[#145a8a] to-[#1a7ab5] rounded-3xl p-8 sm:p-12 lg:p-16 text-white relative overflow-hidden"
+          className="relative rounded-3xl overflow-hidden"
         >
-          {/* Decorative */}
-          <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-          <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+          <Image
+            src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?q=80&w=2070&auto=format&fit=crop"
+            alt="Modern African city skyline"
+            fill
+            className="object-cover"
+          />
+          <div className="absolute inset-0 bg-[#0c2d48]/85" />
 
-          <div className="relative grid lg:grid-cols-2 gap-12 items-center">
-            <div>
-              <h3 className="text-2xl sm:text-3xl font-bold mb-4">
-                Strategic Focus Areas
-              </h3>
-              <p className="text-blue-100/80 text-lg leading-relaxed">
-                We are strategically positioned to drive financial inclusion and
-                economic empowerment across key sectors in Zimbabwe.
-              </p>
-            </div>
-            <div className="space-y-3">
-              {strategicAreas.map((area, i) => (
-                <motion.div
-                  key={i}
-                  initial={{ opacity: 0, x: 20 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ duration: 0.4, delay: i * 0.08 }}
-                  className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-xl px-5 py-3 border border-white/10"
-                >
-                  <div className="w-2 h-2 bg-cyan-300 rounded-full flex-shrink-0" />
-                  <span className="text-white/90 font-medium text-sm">
-                    {area}
-                  </span>
-                </motion.div>
-              ))}
+          <div className="relative p-8 sm:p-12 lg:p-16">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 className="text-2xl sm:text-3xl font-bold text-white mb-4">
+                  Strategic Focus Areas
+                </h3>
+                <p className="text-blue-100/70 text-lg leading-relaxed">
+                  We are strategically positioned to drive financial inclusion
+                  and economic empowerment across key sectors in Zimbabwe.
+                </p>
+              </div>
+              <div className="space-y-2.5">
+                {strategicAreas.map((area, i) => (
+                  <motion.div
+                    key={i}
+                    initial={{ opacity: 0, x: 20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ duration: 0.35, delay: i * 0.06 }}
+                    className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-5 py-3"
+                  >
+                    <CheckCircle size={16} className="text-cyan-300 flex-shrink-0" />
+                    <span className="text-white/90 font-medium text-sm">
+                      {area}
+                    </span>
+                  </motion.div>
+                ))}
+              </div>
             </div>
           </div>
         </motion.div>

@@ -1,75 +1,59 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
-import {
-  Banknote,
-  GraduationCap,
-  ShoppingBag,
-  Landmark,
-  DollarSign,
-  ShieldCheck,
-  Zap,
-  Eye,
-  Heart,
-  Repeat,
-} from "lucide-react";
+import { ArrowRight } from "lucide-react";
+import Link from "next/link";
 
 const services = [
   {
-    icon: Banknote,
     title: "Salary-Based Loans",
     description:
       "Quick and accessible loans for salaried employees, designed to bridge financial gaps between pay cycles with flexible repayment terms.",
-    color: "from-blue-500 to-blue-600",
-    bgLight: "bg-blue-50",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=987&auto=format&fit=crop",
+    alt: "Professional African woman at work",
   },
   {
-    icon: ShieldCheck,
     title: "Collateral-Based Loans",
     description:
       "Secured lending solutions with competitive rates, allowing you to leverage your assets for larger loan amounts and better terms.",
-    color: "from-emerald-500 to-emerald-600",
-    bgLight: "bg-emerald-50",
+    image:
+      "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1073&auto=format&fit=crop",
+    alt: "Business handshake agreement",
   },
   {
-    icon: GraduationCap,
     title: "School Fees Loans",
     description:
       "Invest in education without financial stress. Our school fees loans ensure uninterrupted learning for your children.",
-    color: "from-amber-500 to-amber-600",
-    bgLight: "bg-amber-50",
+    image:
+      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1044&auto=format&fit=crop",
+    alt: "African students in classroom",
   },
   {
-    icon: ShoppingBag,
     title: "Product Financing",
     description:
       "Acquire essential products and assets through our flexible financing plans, making big purchases manageable with structured repayments.",
-    color: "from-purple-500 to-purple-600",
-    bgLight: "bg-purple-50",
+    image:
+      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=987&auto=format&fit=crop",
+    alt: "Shopping and product purchase",
   },
   {
-    icon: Landmark,
     title: "SSB Government Loans",
     description:
       "Tailored lending solutions exclusively for government employees, with special terms and streamlined processing through SSB deductions.",
-    color: "from-rose-500 to-rose-600",
-    bgLight: "bg-rose-50",
+    image:
+      "https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1032&auto=format&fit=crop",
+    alt: "Government building and professionals",
   },
   {
-    icon: DollarSign,
     title: "Foreign Currency Lending",
     description:
       "Licensed forex lending solutions to meet your foreign currency needs, fully compliant with Reserve Bank of Zimbabwe regulations.",
-    color: "from-cyan-500 to-cyan-600",
-    bgLight: "bg-cyan-50",
+    image:
+      "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=1171&auto=format&fit=crop",
+    alt: "Currency and financial trading",
   },
-];
-
-const features = [
-  { icon: Zap, text: "Fast to Access" },
-  { icon: Eye, text: "Transparent" },
-  { icon: Heart, text: "Affordable" },
-  { icon: Repeat, text: "Flexible Repayment" },
 ];
 
 export default function Services() {
@@ -82,7 +66,7 @@ export default function Services() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+          className="text-center mb-14"
         >
           <span className="inline-block text-primary font-semibold text-sm tracking-wider uppercase mb-3">
             Our Products
@@ -92,57 +76,48 @@ export default function Services() {
           </h2>
           <div className="w-20 h-1 bg-primary mx-auto rounded-full mb-6" />
           <p className="text-gray-600 max-w-2xl mx-auto text-lg">
-            We offer a diversified portfolio of microfinance products designed to
-            meet the real-life financial needs of every Zimbabwean.
+            A diversified portfolio of microfinance products designed to meet the
+            real-life financial needs of every Zimbabwean.
           </p>
         </motion.div>
 
-        {/* Features bar */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="flex flex-wrap justify-center gap-4 sm:gap-8 mb-16"
-        >
-          {features.map((feature, i) => (
-            <div
-              key={i}
-              className="flex items-center gap-2 bg-white px-5 py-3 rounded-full shadow-sm border border-gray-100"
-            >
-              <feature.icon size={18} className="text-primary" />
-              <span className="text-sm font-medium text-gray-700">
-                {feature.text}
-              </span>
-            </div>
-          ))}
-        </motion.div>
-
         {/* Services grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-7">
           {services.map((service, index) => (
             <motion.div
               key={index}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="group bg-white rounded-2xl p-8 shadow-sm border border-gray-100 hover:shadow-xl hover:border-primary/20 transition-all duration-300 hover:-translate-y-1"
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+              className="group bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
             >
-              <div
-                className={`w-14 h-14 ${service.bgLight} rounded-2xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300`}
-              >
-                <service.icon
-                  size={28}
-                  className="text-primary"
+              {/* Image */}
+              <div className="relative h-48 overflow-hidden">
+                <Image
+                  src={service.image}
+                  alt={service.alt}
+                  fill
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
+                <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
               </div>
-              <h3 className="text-xl font-bold text-gray-900 mb-3">
-                {service.title}
-              </h3>
-              <p className="text-gray-600 leading-relaxed text-sm">
-                {service.description}
-              </p>
+              {/* Content */}
+              <div className="p-6">
+                <h3 className="text-lg font-bold text-gray-900 mb-2">
+                  {service.title}
+                </h3>
+                <p className="text-gray-500 leading-relaxed text-sm mb-4">
+                  {service.description}
+                </p>
+                <Link
+                  href="#contact"
+                  className="inline-flex items-center gap-1 text-primary text-sm font-semibold hover:gap-2 transition-all duration-200"
+                >
+                  Learn More
+                  <ArrowRight size={15} />
+                </Link>
+              </div>
             </motion.div>
           ))}
         </div>
