@@ -34,10 +34,13 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1932&auto=format&fit=crop"
-                alt="African business team collaborating in modern office"
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=987&auto=format&fit=crop"
+                alt="Black African businessman in professional suit smiling confidently"
                 fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
+                placeholder="blur"
+                blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAHxAAAgICAgMBAAAAAAAAAAAAAQIAAwQRBSESMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDK8XlL8esVpYoUewDr+yflOVyFt1rWN7Y9kxEH/9k="
               />
             </div>
             {/* Floating card */}
@@ -107,9 +110,10 @@ export default function About() {
             className="relative rounded-2xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1531482615713-2afd69097998?q=80&w=2070&auto=format&fit=crop"
-              alt="Team planning session"
+              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop"
+              alt="Black African team members planning together in a meeting room"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c2d48]/95 via-[#0c2d48]/70 to-[#0c2d48]/30" />
@@ -135,9 +139,10 @@ export default function About() {
             className="relative rounded-2xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=2070&auto=format&fit=crop"
-              alt="African woman entrepreneur"
+              src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=986&auto=format&fit=crop"
+              alt="Confident Black African woman entrepreneur smiling"
               fill
+              sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0c2d48]/95 via-[#0c2d48]/70 to-[#0c2d48]/30" />

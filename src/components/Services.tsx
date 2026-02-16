@@ -11,48 +11,48 @@ const services = [
     description:
       "Quick and accessible loans for salaried employees, designed to bridge financial gaps between pay cycles with flexible repayment terms.",
     image:
-      "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?q=80&w=987&auto=format&fit=crop",
-    alt: "Professional African woman at work",
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=987&auto=format&fit=crop",
+    alt: "Black African professional man working at his office desk",
   },
   {
     title: "Collateral-Based Loans",
     description:
       "Secured lending solutions with competitive rates, allowing you to leverage your assets for larger loan amounts and better terms.",
     image:
-      "https://images.unsplash.com/photo-1560520653-9e0e4c89eb11?q=80&w=1073&auto=format&fit=crop",
-    alt: "Business handshake agreement",
+      "https://images.unsplash.com/photo-1521791055366-0d553872125f?q=80&w=1169&auto=format&fit=crop",
+    alt: "Black African business people shaking hands on a deal",
   },
   {
     title: "School Fees Loans",
     description:
       "Invest in education without financial stress. Our school fees loans ensure uninterrupted learning for your children.",
     image:
-      "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1044&auto=format&fit=crop",
-    alt: "African students in classroom",
+      "https://images.unsplash.com/photo-1577896851231-70ef18881754?q=80&w=1170&auto=format&fit=crop",
+    alt: "Black African children studying happily in a classroom",
   },
   {
     title: "Product Financing",
     description:
       "Acquire essential products and assets through our flexible financing plans, making big purchases manageable with structured repayments.",
     image:
-      "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=987&auto=format&fit=crop",
-    alt: "Shopping and product purchase",
+      "https://images.unsplash.com/photo-1556742031-c6961e8560b0?q=80&w=987&auto=format&fit=crop",
+    alt: "Black African woman shopping for products with confidence",
   },
   {
     title: "SSB Government Loans",
     description:
       "Tailored lending solutions exclusively for government employees, with special terms and streamlined processing through SSB deductions.",
     image:
-      "https://images.unsplash.com/photo-1568992687947-868a62a9f521?q=80&w=1032&auto=format&fit=crop",
-    alt: "Government building and professionals",
+      "https://images.unsplash.com/photo-1573164574572-cb89e39749b4?q=80&w=1169&auto=format&fit=crop",
+    alt: "Black African government employee in professional attire",
   },
   {
     title: "Foreign Currency Lending",
     description:
       "Licensed forex lending solutions to meet your foreign currency needs, fully compliant with Reserve Bank of Zimbabwe regulations.",
     image:
-      "https://images.unsplash.com/photo-1580519542036-c47de6196ba5?q=80&w=1171&auto=format&fit=crop",
-    alt: "Currency and financial trading",
+      "https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?q=80&w=1170&auto=format&fit=crop",
+    alt: "Foreign currency notes representing forex lending services",
   },
 ];
 
@@ -98,6 +98,7 @@ export default function Services() {
                   src={service.image}
                   alt={service.alt}
                   fill
+                  sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />

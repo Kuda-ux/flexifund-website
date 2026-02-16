@@ -10,12 +10,15 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-end lg:items-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
-        alt="African professionals in a business meeting"
+        src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=2074&auto=format&fit=crop"
+        alt="Black African professionals collaborating in a modern office in Zimbabwe"
         fill
         className="object-cover"
         priority
-        quality={90}
+        sizes="100vw"
+        quality={80}
+        placeholder="blur"
+        blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAYEBQYFBAYGBQYHBwYIChAKCgkJChQODwwQFxQYGBcUFhYaHSUfGhsjHBYWICwgIyYnKSopGR8tMC0oMCUoKSj/2wBDAQcHBwoIChMKChMoGhYaKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCgoKCj/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAIhAAAQMDBAMBAAAAAAAAAAAAAQIDBAAFEQYSITETQVFh/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwCxp+/XO6amhQbi+4lpbqUqbCzsCT9A4H2tHooqB//Z"
       />
       {/* Dark overlay */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#0c2d48]/90 via-[#0c2d48]/75 to-[#0c2d48]/40" />

@@ -68,9 +68,10 @@ export default function Contact() {
             {/* Contact image */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1553877522-43269d4ea984?q=80&w=2070&auto=format&fit=crop"
-                alt="Customer service representative helping a client"
+                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=1170&auto=format&fit=crop"
+                alt="Black African customer service professional helping a client with financial services"
                 fill
+                sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#0c2d48]/80 to-transparent" />
