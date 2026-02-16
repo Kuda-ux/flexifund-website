@@ -31,8 +31,8 @@ export default function Footer() {
       {/* CTA Banner with background image */}
       <div className="relative overflow-hidden">
         <Image
-          src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=2074&auto=format&fit=crop"
-          alt="Black African professionals celebrating business success together"
+          src="https://images.pexels.com/photos/5439400/pexels-photo-5439400.jpeg?auto=compress&cs=tinysrgb&w=1920&fit=crop"
+          alt="Black African businessman in professional office setting"
           fill
           sizes="100vw"
           className="object-cover"

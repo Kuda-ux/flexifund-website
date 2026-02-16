@@ -34,8 +34,8 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-xl">
               <Image
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=987&auto=format&fit=crop"
-                alt="Black African businessman in professional suit smiling confidently"
+                src="https://images.pexels.com/photos/5061276/pexels-photo-5061276.jpeg?auto=compress&cs=tinysrgb&w=1260&fit=crop"
+                alt="Black African businessman discussing business strategy"
                 fill
                 sizes="(max-width: 1024px) 100vw, 50vw"
                 className="object-cover"
@@ -110,8 +110,8 @@ export default function About() {
             className="relative rounded-2xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1543269865-cbf427effbad?q=80&w=2070&auto=format&fit=crop"
-              alt="Black African team members planning together in a meeting room"
+              src="https://images.pexels.com/photos/7679178/pexels-photo-7679178.jpeg?auto=compress&cs=tinysrgb&w=1260&fit=crop"
+              alt="Black African professionals in a business meeting"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"
@@ -139,8 +139,8 @@ export default function About() {
             className="relative rounded-2xl overflow-hidden"
           >
             <Image
-              src="https://images.unsplash.com/photo-1589156280159-27698a70f29e?q=80&w=986&auto=format&fit=crop"
-              alt="Confident Black African woman entrepreneur smiling"
+              src="https://images.pexels.com/photos/3727513/pexels-photo-3727513.jpeg?auto=compress&cs=tinysrgb&w=1260&fit=crop"
+              alt="Confident Black African woman professional smiling"
               fill
               sizes="(max-width: 768px) 100vw, 50vw"
               className="object-cover"

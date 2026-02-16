@@ -1,8 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Globe, Clock, Send } from "lucide-react";
+import {
+  MapPin,
+  Phone,
+  Mail,
+  Globe,
+  Clock,
+  Send,
+  CheckCircle,
+  Loader2,
+} from "lucide-react";
 
 const contactInfo = [
   {
@@ -32,6 +42,44 @@ const contactInfo = [
 ];
 
 export default function Contact() {
+  const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    setStatus("sending");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+
+    // Web3Forms API — sends email to info@flexifund.co.zw
+    // To activate: go to https://web3forms.com, enter info@flexifund.co.zw,
+    // verify the email, and replace the access_key below with your key.
+    formData.append("access_key", "YOUR_WEB3FORMS_ACCESS_KEY");
+    formData.append("from_name", "FlexiFund Website Contact Form");
+    formData.append("to", "info@flexifund.co.zw");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setStatus("success");
+        form.reset();
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setTimeout(() => setStatus("idle"), 4000);
+      }
+    } catch {
+      setStatus("error");
+      setTimeout(() => setStatus("idle"), 4000);
+    }
+  }
+
   return (
     <section id="contact" className="py-20 lg:py-28 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -68,8 +116,8 @@ export default function Contact() {
             {/* Contact image */}
             <div className="relative rounded-2xl overflow-hidden aspect-[4/3] shadow-lg">
               <Image
-                src="https://images.unsplash.com/photo-1573497620053-ea5300f94f21?q=80&w=1170&auto=format&fit=crop"
-                alt="Black African customer service professional helping a client with financial services"
+                src="https://images.pexels.com/photos/2381069/pexels-photo-2381069.jpeg?auto=compress&cs=tinysrgb&w=1260&fit=crop"
+                alt="Black African woman professional smiling warmly"
                 fill
                 sizes="(max-width: 1024px) 100vw, 40vw"
                 className="object-cover"
@@ -138,31 +186,23 @@ export default function Contact() {
                 24 hours.
               </p>
 
-              <form
-                className="space-y-5"
-                onSubmit={(e) => {
-                  e.preventDefault();
-                  const form = e.target as HTMLFormElement;
-                  const name = (
-                    form.elements.namedItem("name") as HTMLInputElement
-                  ).value;
-                  const email = (
-                    form.elements.namedItem("email") as HTMLInputElement
-                  ).value;
-                  const phone = (
-                    form.elements.namedItem("phone") as HTMLInputElement
-                  ).value;
-                  const subject = (
-                    form.elements.namedItem("subject") as HTMLSelectElement
-                  ).value;
-                  const message = (
-                    form.elements.namedItem("message") as HTMLTextAreaElement
-                  ).value;
+              {status === "success" && (
+                <div className="mb-6 flex items-center gap-2 bg-emerald-50 border border-emerald-200 text-emerald-700 rounded-lg px-4 py-3 text-sm">
+                  <CheckCircle size={18} />
+                  Message sent successfully! We&apos;ll get back to you soon.
+                </div>
+              )}
 
-                  const mailtoLink = `mailto:info@flexifund.co.zw?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(`Name: ${name}\nEmail: ${email}\nPhone: ${phone}\n\n${message}`)}`;
-                  window.location.href = mailtoLink;
-                }}
-              >
+              {status === "error" && (
+                <div className="mb-6 bg-red-50 border border-red-200 text-red-700 rounded-lg px-4 py-3 text-sm">
+                  Something went wrong. Please try again or email us directly at info@flexifund.co.zw
+                </div>
+              )}
+
+              <form className="space-y-5" onSubmit={handleSubmit}>
+                <input type="hidden" name="subject" value="New Contact Form Submission — FlexiFund Website" />
+                <input type="hidden" name="replyto" value="" />
+
                 <div className="grid sm:grid-cols-2 gap-4">
                   <div>
                     <label
@@ -216,14 +256,14 @@ export default function Contact() {
                   </div>
                   <div>
                     <label
-                      htmlFor="subject"
+                      htmlFor="loan_type"
                       className="block text-sm font-medium text-gray-700 mb-1.5"
                     >
-                      Subject
+                      Loan Type
                     </label>
                     <select
-                      id="subject"
-                      name="subject"
+                      id="loan_type"
+                      name="loan_type"
                       className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-all text-sm text-gray-700"
                     >
                       <option value="General Inquiry">General Inquiry</option>
@@ -256,10 +296,20 @@ export default function Contact() {
 
                 <button
                   type="submit"
-                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg"
+                  disabled={status === "sending"}
+                  className="inline-flex items-center justify-center gap-2 w-full sm:w-auto bg-primary hover:bg-primary-dark text-white px-8 py-3.5 rounded-lg font-semibold text-sm transition-all duration-200 shadow-md hover:shadow-lg disabled:opacity-70 disabled:cursor-not-allowed"
                 >
-                  <Send size={18} />
-                  Send Message
+                  {status === "sending" ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : (
+                    <>
+                      <Send size={18} />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>

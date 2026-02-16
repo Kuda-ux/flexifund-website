@@ -10,8 +10,8 @@ export default function Hero() {
     <section id="home" className="relative min-h-screen flex items-end lg:items-center overflow-hidden">
       {/* Background image */}
       <Image
-        src="https://images.unsplash.com/photo-1531545514256-b1400bc00f31?q=80&w=2074&auto=format&fit=crop"
-        alt="Black African professionals collaborating in a modern office in Zimbabwe"
+        src="https://images.pexels.com/photos/5083017/pexels-photo-5083017.jpeg?auto=compress&cs=tinysrgb&w=1920&fit=crop"
+        alt="Black African businessman in professional suit at the office"
         fill
         className="object-cover"
         priority

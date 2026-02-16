@@ -97,7 +97,7 @@ export default function WhyUs() {
             className="lg:col-span-2 relative rounded-2xl overflow-hidden min-h-[360px] shadow-lg"
           >
             <Image
-              src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?q=80&w=1171&auto=format&fit=crop"
+              src="https://images.pexels.com/photos/7681016/pexels-photo-7681016.jpeg?auto=compress&cs=tinysrgb&w=1260&fit=crop"
               alt="Black African colleagues collaborating and smiling in a modern workspace"
               fill
               sizes="(max-width: 1024px) 100vw, 40vw"
@@ -150,8 +150,8 @@ export default function WhyUs() {
           className="relative rounded-3xl overflow-hidden"
         >
           <Image
-            src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2070&auto=format&fit=crop"
-            alt="Modern city skyline with glass buildings representing economic growth in Africa"
+            src="https://images.pexels.com/photos/5439400/pexels-photo-5439400.jpeg?auto=compress&cs=tinysrgb&w=1920&fit=crop"
+            alt="Black African businessman working in modern office environment"
             fill
             sizes="100vw"
             className="object-cover"
