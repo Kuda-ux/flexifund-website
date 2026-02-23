@@ -1,12 +1,5 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.flexifund.co.zw"),
@@ -93,6 +86,20 @@ export const metadata: Metadata = {
     canonical: "https://www.flexifund.co.zw",
   },
   category: "Financial Services",
+  icons: {
+    icon: [
+      { url: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    apple: [
+      { url: "/apple-icon.png", sizes: "180x180", type: "image/png" },
+    ],
+  },
+  verification: {
+    google: "GOOGLE_SITE_VERIFICATION_CODE",
+  },
+  other: {
+    "google-site-verification": "GOOGLE_SITE_VERIFICATION_CODE",
+  },
 };
 
 const jsonLd = {
@@ -238,7 +245,7 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
       </head>
-      <body className={`${inter.variable} antialiased`}>{children}</body>
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

@@ -9,15 +9,16 @@ const quickLinks = [
   { name: "About Us", href: "#about" },
   { name: "Our Services", href: "#services" },
   { name: "Why Choose Us", href: "#why-us" },
+  { name: "FAQ", href: "#faq" },
   { name: "Contact", href: "#contact" },
 ];
 
-const services = [
-  "Salary-Based Loans",
-  "Collateral-Based Loans",
-  "School Fees Loans",
-  "Product Financing",
-  "SSB Government Loans",
+const serviceLinks = [
+  { name: "Salary-Based Loans", href: "#services" },
+  { name: "Collateral-Based Loans", href: "#services" },
+  { name: "School Fees Loans", href: "#services" },
+  { name: "Product Financing", href: "#services" },
+  { name: "SSB Government Loans", href: "#services" },
 ];
 
 export default function Footer() {
@@ -56,13 +57,15 @@ export default function Footer() {
                 <Phone size={18} />
                 Call Now
               </Link>
-              <Link
-                href="#contact"
-                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-white/10 transition-all duration-200"
+              <button
+                onClick={() => {
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center justify-center gap-2 border border-white/30 text-white px-7 py-3.5 rounded-lg font-semibold text-sm hover:bg-white/10 transition-all duration-200 cursor-pointer"
               >
                 <Mail size={18} />
                 Email Us
-              </Link>
+              </button>
             </div>
           </div>
         </div>
@@ -125,12 +128,16 @@ export default function Footer() {
               <ul className="space-y-2.5">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <Link
-                      href={link.href}
-                      className="text-blue-200/50 hover:text-white text-sm transition-colors duration-200"
+                    <button
+                      onClick={() => {
+                        document
+                          .getElementById(link.href.replace("#", ""))
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="text-blue-200/50 hover:text-white text-sm transition-colors duration-200 cursor-pointer"
                     >
                       {link.name}
-                    </Link>
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -142,14 +149,18 @@ export default function Footer() {
                 Our Services
               </h4>
               <ul className="space-y-2.5">
-                {services.map((service) => (
-                  <li key={service}>
-                    <Link
-                      href="#services"
-                      className="text-blue-200/50 hover:text-white text-sm transition-colors duration-200"
+                {serviceLinks.map((service) => (
+                  <li key={service.name}>
+                    <button
+                      onClick={() => {
+                        document
+                          .getElementById(service.href.replace("#", ""))
+                          ?.scrollIntoView({ behavior: "smooth" });
+                      }}
+                      className="text-blue-200/50 hover:text-white text-sm transition-colors duration-200 cursor-pointer text-left"
                     >
-                      {service}
-                    </Link>
+                      {service.name}
+                    </button>
                   </li>
                 ))}
               </ul>
@@ -161,30 +172,40 @@ export default function Footer() {
                 Contact Info
               </h4>
               <div className="space-y-4">
-                <div className="flex items-start gap-3">
+                <Link
+                  href="https://maps.google.com/?q=1+Union+Avenue+Harare+Zimbabwe"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-start gap-3 group/link"
+                >
                   <MapPin
                     size={16}
                     className="text-blue-300/50 flex-shrink-0 mt-0.5"
                   />
-                  <span className="text-blue-200/50 text-sm">
+                  <span className="text-blue-200/50 text-sm group-hover/link:text-white transition-colors duration-200">
                     First Floor, Office 9, Suite 4, Centre Wing, No. 1 Union Avenue, Harare
                   </span>
-                </div>
+                </Link>
                 <div className="flex items-start gap-3">
                   <Phone size={16} className="text-blue-300/50 flex-shrink-0 mt-0.5" />
-                  <div className="text-blue-200/50 text-sm">
-                    <p>+263 788 089 061</p>
-                    <p>+263 787 543 916</p>
-                    <p className="mt-1 text-blue-200/40">Landline: +263 242 XXX XXX</p>
-                    <p className="text-blue-200/40">VOIP: +263 8677 XXX XXX</p>
+                  <div className="text-sm">
+                    <Link href="tel:+263788089061" className="block text-blue-200/50 hover:text-white transition-colors duration-200">
+                      +263 788 089 061
+                    </Link>
+                    <Link href="tel:+263787543916" className="block text-blue-200/50 hover:text-white transition-colors duration-200">
+                      +263 787 543 916
+                    </Link>
                   </div>
                 </div>
-                <div className="flex items-center gap-3">
+                <Link
+                  href="mailto:info@flexifund.co.zw"
+                  className="flex items-center gap-3 group/link"
+                >
                   <Mail size={16} className="text-blue-300/50 flex-shrink-0" />
-                  <span className="text-blue-200/50 text-sm">
+                  <span className="text-blue-200/50 text-sm group-hover/link:text-white transition-colors duration-200">
                     info@flexifund.co.zw
                   </span>
-                </div>
+                </Link>
               </div>
             </div>
           </div>
