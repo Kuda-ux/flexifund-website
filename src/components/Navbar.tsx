@@ -54,7 +54,7 @@ export default function Navbar() {
             <span className="text-blue-200/80">info@flexifund.co.zw</span>
           </div>
           <span className="text-blue-200/60">
-            RBZ Licensed Microfinance — Licence No. 000994
+            Trusted Microfinance Solutions Across Zimbabwe
           </span>
         </div>
       </div>
@@ -99,13 +99,15 @@ export default function Navbar() {
 
           {/* CTA */}
           <div className="hidden lg:flex items-center gap-3">
-            <Link
-              href="#contact"
-              className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white pl-5 pr-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md"
+            <button
+              onClick={() => {
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="inline-flex items-center gap-1.5 bg-primary hover:bg-primary-dark text-white pl-5 pr-4 py-2.5 rounded-lg text-sm font-semibold transition-all duration-200 shadow-sm hover:shadow-md cursor-pointer"
             >
               Apply Now
               <ChevronRight size={16} />
-            </Link>
+            </button>
           </div>
 
           {/* Mobile menu button */}
@@ -137,14 +139,16 @@ export default function Navbar() {
             </Link>
           ))}
           <div className="pt-2 pb-1 px-2">
-            <Link
-              href="#contact"
-              onClick={() => setIsOpen(false)}
-              className="flex items-center justify-center gap-2 bg-primary text-white rounded-lg py-3 font-semibold text-sm"
+            <button
+              onClick={() => {
+                setIsOpen(false);
+                document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+              }}
+              className="flex items-center justify-center gap-2 bg-primary text-white rounded-lg py-3 font-semibold text-sm w-full cursor-pointer"
             >
               Apply Now
               <ChevronRight size={16} />
-            </Link>
+            </button>
           </div>
           <div className="flex items-center gap-4 px-4 py-3 text-xs text-gray-500 border-t border-gray-100 mt-1">
             <span className="flex items-center gap-1.5">

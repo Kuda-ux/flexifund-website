@@ -19,8 +19,8 @@ const contactInfo = [
     icon: MapPin,
     title: "Visit Us",
     details: [
-      "Office 9, Suite 4, Centre Wing",
-      "Number 1, Union Avenue",
+      "First Floor, Office 9, Suite 4",
+      "Centre Wing, Number 1 Union Avenue",
       "Harare, Zimbabwe",
     ],
   },
@@ -272,7 +272,6 @@ export default function Contact() {
                       <option value="School Fees Loan">School Fees Loan</option>
                       <option value="Product Financing">Product Financing</option>
                       <option value="SSB Government Loan">SSB Government Loan</option>
-                      <option value="Foreign Currency Lending">Foreign Currency Lending</option>
                     </select>
                   </div>
                 </div>

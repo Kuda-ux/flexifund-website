@@ -5,17 +5,13 @@ import { motion } from "framer-motion";
 import {
   Target,
   Eye,
-  Building2,
   CalendarDays,
-  FileCheck,
   MapPin,
 } from "lucide-react";
 
 const companyInfo = [
-  { icon: Building2, label: "Registration No.", value: "44846A0252025" },
-  { icon: FileCheck, label: "RBZ Licence No.", value: "000994" },
   { icon: CalendarDays, label: "Incorporated", value: "29 May 2025" },
-  { icon: MapPin, label: "Head Office", value: "No. 1 Union Avenue, Harare" },
+  { icon: MapPin, label: "Head Office", value: "First Floor, No. 1 Union Avenue, Harare" },
 ];
 
 export default function About() {
@@ -43,18 +39,6 @@ export default function About() {
                 blurDataURL="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAoHBwgHBgoICAgLCgoLDhgQDg0NDh0VFhEYIx8lJCIfIiEmKzcvJik0KSEiMEExNDk7Pj4+JS5ESUM8SDc9Pjv/2wBDAQoLCw4NDhwQEBw7KCIoOzs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozv/wAARCAAIAAoDASIAAhEBAxEB/8QAFgABAQEAAAAAAAAAAAAAAAAAAAUH/8QAHxAAAgICAgMBAAAAAAAAAAAAAQIAAwQRBSESMUFR/8QAFQEBAQAAAAAAAAAAAAAAAAAAAAH/xAAUEQEAAAAAAAAAAAAAAAAAAAAA/9oADAMBAAIRAxEAPwDK8XlL8esVpYoUewDr+yflOVyFt1rWN7Y9kxEH/9k="
               />
             </div>
-            {/* Floating card */}
-            <div className="absolute -bottom-6 -right-4 sm:right-6 bg-white rounded-xl shadow-lg px-5 py-4 border border-gray-100">
-              <div className="flex items-center gap-3">
-                <div className="w-10 h-10 bg-emerald-100 rounded-full flex items-center justify-center">
-                  <FileCheck className="text-emerald-600" size={20} />
-                </div>
-                <div>
-                  <div className="text-sm font-bold text-gray-900">RBZ Licensed</div>
-                  <div className="text-xs text-gray-500">Licence No. 000994</div>
-                </div>
-              </div>
-            </div>
           </motion.div>
 
           {/* Text */}
@@ -72,11 +56,9 @@ export default function About() {
             </h2>
             <p className="text-gray-600 leading-relaxed mb-6">
               FlexiFund Private Limited is a registered microfinance institution
-              incorporated under the laws of Zimbabwe, duly licensed by the
-              Reserve Bank of Zimbabwe to provide lending services in foreign
-              currency. We serve individuals, salaried employees, entrepreneurs,
-              and government workers with accessible, transparent, and
-              responsible financial solutions.
+              incorporated under the laws of Zimbabwe. We serve individuals,
+              salaried employees, entrepreneurs, and government workers with
+              accessible, transparent, and responsible financial solutions.
             </p>
 
             {/* Company info grid */}

@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { Phone, Mail, MapPin, ArrowUp } from "lucide-react";
+import { Phone, Mail, MapPin, ArrowUp, Facebook, Instagram, Linkedin } from "lucide-react";
 
 const quickLinks = [
   { name: "Home", href: "#home" },
@@ -18,7 +18,6 @@ const services = [
   "School Fees Loans",
   "Product Financing",
   "SSB Government Loans",
-  "Foreign Currency Lending",
 ];
 
 export default function Footer() {
@@ -46,7 +45,7 @@ export default function Footer() {
               </h3>
               <p className="text-blue-200/70 max-w-md">
                 Apply for a loan today and experience the FlexiFund difference.
-                Fast, flexible, and fully licensed.
+                Fast, flexible, and trusted by Zimbabweans.
               </p>
             </div>
             <div className="flex flex-col sm:flex-row gap-3">
@@ -83,12 +82,38 @@ export default function Footer() {
                 className="h-11 w-auto mb-5 brightness-0 invert"
               />
               <p className="text-blue-200/50 text-sm leading-relaxed mb-5">
-                A licensed microfinance institution providing accessible,
+                A trusted microfinance institution providing accessible,
                 flexible, and sustainable financial solutions across Zimbabwe.
               </p>
-              <div className="flex items-center gap-2 text-xs text-blue-200/50">
-                <span className="inline-block w-1.5 h-1.5 bg-emerald-400 rounded-full" />
-                RBZ Licensed — No. 000994
+              {/* Social Media */}
+              <div className="flex items-center gap-3">
+                <Link
+                  href="https://www.facebook.com/flexifund"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-white/5 hover:bg-white/15 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  aria-label="Facebook"
+                >
+                  <Facebook size={16} className="text-blue-200/60" />
+                </Link>
+                <Link
+                  href="https://www.instagram.com/flexifund"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-white/5 hover:bg-white/15 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  aria-label="Instagram"
+                >
+                  <Instagram size={16} className="text-blue-200/60" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/company/flexifund"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-9 h-9 bg-white/5 hover:bg-white/15 rounded-lg flex items-center justify-center transition-colors duration-200"
+                  aria-label="LinkedIn"
+                >
+                  <Linkedin size={16} className="text-blue-200/60" />
+                </Link>
               </div>
             </div>
 
@@ -142,14 +167,16 @@ export default function Footer() {
                     className="text-blue-300/50 flex-shrink-0 mt-0.5"
                   />
                   <span className="text-blue-200/50 text-sm">
-                    Office 9, Suite 4, Centre Wing, No. 1 Union Avenue, Harare
+                    First Floor, Office 9, Suite 4, Centre Wing, No. 1 Union Avenue, Harare
                   </span>
                 </div>
-                <div className="flex items-center gap-3">
-                  <Phone size={16} className="text-blue-300/50 flex-shrink-0" />
+                <div className="flex items-start gap-3">
+                  <Phone size={16} className="text-blue-300/50 flex-shrink-0 mt-0.5" />
                   <div className="text-blue-200/50 text-sm">
                     <p>+263 788 089 061</p>
                     <p>+263 787 543 916</p>
+                    <p className="mt-1 text-blue-200/40">Landline: +263 242 XXX XXX</p>
+                    <p className="text-blue-200/40">VOIP: +263 8677 XXX XXX</p>
                   </div>
                 </div>
                 <div className="flex items-center gap-3">

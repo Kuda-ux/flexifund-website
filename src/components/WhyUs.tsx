@@ -52,7 +52,7 @@ const values = [
 ];
 
 const strategicAreas = [
-  "Foreign currency micro-lending",
+  "Flexible repayment solutions",
   "Government employee financing",
   "Education financing",
   "Asset and product financing",

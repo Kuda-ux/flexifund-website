@@ -37,8 +37,7 @@ export default function Hero() {
 
             <p className="text-lg sm:text-xl text-white/75 mb-8 max-w-lg leading-relaxed font-light">
               Accessible, responsible microfinance solutions for individuals,
-              families, and businesses — licensed by the Reserve Bank of
-              Zimbabwe.
+              families, and businesses across Zimbabwe.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-3 mb-10">
@@ -60,8 +59,8 @@ export default function Hero() {
             {/* Trust indicators */}
             <div className="flex flex-wrap items-center gap-x-6 gap-y-2">
               {[
-                "RBZ Licensed (No. 000994)",
-                "Foreign Currency Lending",
+                "Trusted Microfinance",
+                "Flexible Repayment Terms",
                 "Fast Loan Processing",
               ].map((item) => (
                 <span

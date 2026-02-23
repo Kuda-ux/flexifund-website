@@ -8,17 +8,12 @@ const faqs = [
   {
     question: "What is FlexiFund?",
     answer:
-      "FlexiFund (Private) Limited is a registered and RBZ-licensed microfinance institution in Zimbabwe (Licence No. 000994). We provide accessible, flexible, and sustainable financial solutions including salary loans, school fees loans, collateral-based loans, product financing, SSB government loans, and foreign currency lending.",
-  },
-  {
-    question: "Is FlexiFund licensed by the Reserve Bank of Zimbabwe?",
-    answer:
-      "Yes, FlexiFund is fully licensed by the Reserve Bank of Zimbabwe under Licence Number 000994 to provide lending services in foreign currency. We are fully compliant with all RBZ regulations and operate with the highest standards of governance.",
+      "FlexiFund (Private) Limited is a registered microfinance institution in Zimbabwe. We provide accessible, flexible, and sustainable financial solutions including salary loans, school fees loans, collateral-based loans, product financing, and SSB government loans.",
   },
   {
     question: "What types of loans does FlexiFund offer?",
     answer:
-      "We offer six main loan products: Salary-Based Loans for salaried employees, Collateral-Based Loans secured against assets, School Fees Loans for education expenses, Product Financing for asset purchases, SSB Government Loans for government employees, and Foreign Currency Lending in forex.",
+      "We offer five main loan products: Salary-Based Loans for salaried employees, Collateral-Based Loans secured against assets, School Fees Loans for education expenses, Product Financing for asset purchases, and SSB Government Loans for government employees.",
   },
   {
     question: "How do I apply for a loan at FlexiFund?",
@@ -28,12 +23,7 @@ const faqs = [
   {
     question: "Where is FlexiFund located?",
     answer:
-      "Our head office is at Office 9, Suite 4, Centre Wing, Number 1 Union Avenue, Harare, Zimbabwe. We are open Monday to Friday 8:00 AM – 5:00 PM and Saturday 8:00 AM – 1:00 PM.",
-  },
-  {
-    question: "Does FlexiFund offer loans in foreign currency?",
-    answer:
-      "Yes, FlexiFund is licensed by the Reserve Bank of Zimbabwe to provide lending services in foreign currency. Our Foreign Currency Lending product is fully compliant with RBZ regulations.",
+      "Our head office is at First Floor, Office 9, Suite 4, Centre Wing, Number 1 Union Avenue, Harare, Zimbabwe. We are open Monday to Friday 8:00 AM – 5:00 PM and Saturday 8:00 AM – 1:00 PM.",
   },
   {
     question: "Can government employees get loans from FlexiFund?",
@@ -44,7 +34,7 @@ const faqs = [
     question:
       "What makes FlexiFund different from other microfinance institutions?",
     answer:
-      "FlexiFund stands out through its RBZ licensing, fast loan processing, transparent terms, flexible repayment options, foreign currency lending capability, and commitment to financial inclusion. Our core values of integrity, accessibility, accountability, and customer-centricity guide every interaction.",
+      "FlexiFund stands out through fast loan processing, transparent terms, flexible repayment options, and commitment to financial inclusion. Our core values of integrity, accessibility, accountability, and customer-centricity guide every interaction.",
   },
 ];
 
